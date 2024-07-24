@@ -12,17 +12,9 @@ selection = st.selectbox('Select data to view', ('Temperature', 'Sky'))
 st.subheader(f"{selection} for the next {days} days in {place}")
 
 
-def get_data(days):
-    dates = ['2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05']
-    temperatures = [10, 20, 30, 4, 23]
-    temperatures = [days* i for i in temperatures]
-    return dates , temperatures
-
 
 data = get_data(place, days, selection)
 
-
-d , t = get_data(days)
 
 
 figure = px.line(x=d, y=t, title='Temperature Forecast', 
